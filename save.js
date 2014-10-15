@@ -1,14 +1,19 @@
-navigator.mozSetMessageHandler("activity", function(activity) {
-	if(activity.source.name = "share"){
-		var url = activity.source.data.url;
-		if ( !(baseUrl = localStorage.getItem("baseUrl"))){
-			alert(document.webL10n.get('not-configured'));
-			window.close();
-			// TODO : ouvrir la fenêtre de configuration 
-		}
-		else{s		
-			window.open(baseUrl + '/?post=' + encodeURIComponent(url) +	'&source=bookmarklet', '_self');
-		}
-	}	
+navigator.mozSetMessageHandler("activity", function(activity){
+	if(activity.source.name == "share"){
+		window.addEventListener('localized', function(){
+			shareUrl(activity.source.data.url);
+		}, false);
+	}
 });
 
+function shareUrl(){
+	var baseUrl = localStorage.getItem("baseUrl");
+	if(baseUrl == null){
+		alert(document.webL10n.get('not-configured'));
+		window.close();
+		// TODO : ouvrir la fenêtre de configuration 
+	}
+	else{	
+		window.open(baseUrl + '/?post=' + encodeURIComponent(url) +	'&source=bookmarklet', '_self');
+	}
+}
