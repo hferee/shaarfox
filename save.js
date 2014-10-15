@@ -6,7 +6,7 @@ navigator.mozSetMessageHandler("activity", function(activity){
 	}
 });
 
-function shareUrl(){
+function shareUrl(url){
 	var baseUrl = localStorage.getItem("baseUrl");
 	if(baseUrl == null){
 		alert(document.webL10n.get('not-configured'));
