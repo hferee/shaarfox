@@ -1,0 +1,3 @@
+[submodule "webL10n"]
+	path = webL10n
+	url = https://github.com/fabi1cazenave/webL10n.git
