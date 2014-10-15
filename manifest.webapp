@@ -1,0 +1,32 @@
+{
+	"version": "0.2",
+	"name": "Shaarfox",
+	"description": "Share links via Shaarli",
+	"launch_path": "/index.html",
+	"icons": {
+		"60": "/icons/shaarli_60.png",
+		"30": "/icons/shaarli_30.png",
+		"128": "/icons/shaarli_128.png",
+		"32": "/icons/shaarli_32.png"
+	},
+	"developer": {
+		"name": "hferee",
+		"url": "http://http.feree.fr/shaarfox"
+	},
+	"locales": {
+		"fr": {
+			"description": "Partager des liens via Shaarli"
+		}
+	},
+	"default_locale": "en",
+	"activities": {
+		"share": {
+			"filters": {
+				"type": [ "url" ]
+			},
+			"href": "/savebookmark.html",
+			"disposition": "inline",
+			"returnValue": false
+		}
+	}
+}
