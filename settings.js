@@ -2,14 +2,9 @@ function saveUrl(){
 	shaarliUrl = document.getElementById("urlInput").value;
 	if (window.localStorage) {
 		localStorage.setItem("baseUrl",shaarliUrl);
-		alert("Url stored");
 	}
-	else{
-		alert("The Url could not be saved");
-	}
+	return shaarliUrl;
 }
-// montrer que c'est bien enregistré
-
 
 function initializeUrl(){
 	if (window.localStorage) {
@@ -22,7 +17,12 @@ function initializeUrl(){
 window.onload = function (){
 	initializeUrl();
 	document.getElementById("save-button").addEventListener('click', function(){
-		saveUrl();
+	    url = saveUrl();
+	    if(url.length){
+		document.getElementById("check-mark").style.visibility = "visible";
+	    }
+	    else{
+		document.getElementById("check-mark").style.visibility = "hidden";
+	    }
 	})
-
 }
