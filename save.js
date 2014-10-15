@@ -6,7 +6,7 @@ navigator.mozSetMessageHandler("activity", function(activity) {
 			window.close();
 			// TODO : ouvrir la fenêtre de configuration 
 		}
-		else{																		
+		else{s		
 			window.open(baseUrl + '/?post=' + encodeURIComponent(url) +	'&source=bookmarklet', '_self');
 		}
 	}	
