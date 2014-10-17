@@ -10,11 +10,11 @@ function initializeUrl(){
     if (window.localStorage){
 	if(savedUrl = localStorage.getItem("baseUrl")){
 	    document.getElementById("urlInput").placeholder = savedUrl;
-	}
     }
 }
+}
 
-window.onload = function (){
+window.onload = function(){
     initializeUrl();
     document.getElementById("save-button").addEventListener('click', function(){
 	url = saveUrl();

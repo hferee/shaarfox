@@ -1,19 +1,18 @@
 navigator.mozSetMessageHandler("activity", function(activity){
-	if(activity.source.name == "share"){
-		window.addEventListener('localized', function(){
-			shareUrl(activity.source.data.url);
-		}, false);
-	}
+		if(activity.source.name == "share"){
+				shareUrl(activity.source.data.url);		
+		}
 });
+
 
 function shareUrl(url){
 	var baseUrl = localStorage.getItem("baseUrl");
 	if(baseUrl == null){
-		alert(document.webL10n.get('not-configured'));
+		//TODO : régionaliser proprement.
+		alert("Please configure Shaarfox first");
 		window.close();
-		// TODO : ouvrir la fenêtre de configuration 
 	}
 	else{	
 		window.open(baseUrl + '/?post=' + encodeURIComponent(url) +	'&source=bookmarklet', '_self');
 	}
-}
+};
